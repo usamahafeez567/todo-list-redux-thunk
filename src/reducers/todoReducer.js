@@ -1,4 +1,4 @@
-import { ADD_TODO, TOGGLE_TODO, DELETE_TODO } from "../actions/todoActions";
+import { ADD_TODO, COMPLETE_TODO, DELETE_TODO } from "../actions/todoActions";
 
 const initialState = [];
 
@@ -6,7 +6,7 @@ const todoReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TODO:
       return [...state, action.payload];
-    case TOGGLE_TODO:
+    case COMPLETE_TODO:
       return state.map((todo) =>
         todo.id === action.payload.id
           ? { ...todo, completed: !todo.completed }
